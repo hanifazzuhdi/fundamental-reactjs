@@ -5,8 +5,9 @@ const BlogCard = (props) => {
         <div className="card-post">
             <img className="thumb-post" src={props.thumb} alt="thumb post"/>
             <div className="content-post">
-                <p className="title-post">{props.title}</p>
-                <p className="body-post">{props.body}</p>
+                <p className="title-post">{props.data.title}</p>
+                <p className="body-post">{props.data.body}</p>
+                <button className="btn-remove" onClick={() => props.remove(props.data.id)}>Remove</button>
             </div>
         </div>
     )

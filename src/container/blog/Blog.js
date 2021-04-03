@@ -13,25 +13,31 @@ export default class Blog extends Component{
         }
     }
 
-    componentDidMount(){
-        // Menggunakan Fetch
-        // fetch('https://jsonplaceholder.typicode.com/posts')
-        //     .then(result => result.json())
-        //     .then(datas => {
-        //         this.setState({
-        //             data: datas
-        //         });
-        //     });
+    // Note : props bisa diisi dengan fungsi
+    handleRemove = (id) => {
+        // console.log(id);
 
-        // Menggunakan Axios
-        axios.get('https://jsonplaceholder.typicode.com/posts')
+        axios.delete(`http://localhost:3004/posts/${id}`)
             .then(response => {
-                console.log(response.data);
-
-                this.setState({
-                    data: response.data
-                })
+                console.log(response);
+                
+                this.getPostApi();
             })
+    }
+
+    // Menggunakan Axios
+    getPostApi = () => {
+        axios.get('http://localhost:3004/posts')
+        .then(response => {
+            // console.log(response.data);
+            this.setState({
+                data: response.data
+            })
+        })
+    }
+
+    componentDidMount(){
+        this.getPostApi();
     }
 
     render(){
@@ -41,7 +47,7 @@ export default class Blog extends Component{
                 <hr/>
                 <div className="cards">
                 {
-                    this.state.data.slice(0, 5).map(data => <BlogCard key={data.id} title={data.title} body={data.body}/>)
+                    this.state.data.map(data => <BlogCard key={data.id} data={data} remove={this.handleRemove}/>)
                 }
                 </div>
             </Fragment>
