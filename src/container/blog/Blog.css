@@ -1,3 +1,55 @@
+h3 {
+    text-align: center;
+}
+
+.form-post {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
+    width: 500px;
+    padding: 10px;
+    margin: 20px auto 50px;
+    border-radius: 4px;
+}
+
+.form-post .form-label {
+    display: block;
+    font-size: 14px;
+    color: #607D88;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.form-post .form-input,
+.form-post .form-textarea {
+    outline: none;
+    border: 1px solid #607D88;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 12px;
+    color: #607D88;
+}
+
+button.form-button {
+    outline: none;
+    border: 1px solid #2196F3;
+    padding: 10px 30px;
+    border-radius: 4px;
+    color: #2196F3;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+button.form-button:hover,
+button.form-button:focus {
+    background-color: #2196F3;
+    color: white;
+    transition: 0.1s;
+}
+
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -8,15 +60,14 @@
     display: flex;
     width: 500px;
     height: 100%;
-    box-shadow: 2px 2px 2px rgba(90, 89, 89, 0.342),
-        -2px -2px 2px rgba(90, 89, 89, 0.342);
+    box-shadow: 0px 0px 20px rgba(90, 89, 89, 0.37);
     border-radius: 3px;
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .thumb-post {
-    width: 100%;
+    min-width: 40%;
     max-height: 100%;
 }
 
@@ -51,6 +102,24 @@
 .btn-remove:hover {
     background-color: rgb(252, 73, 73);
     border: 1px solid rgb(252, 73, 73);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.btn-update {
+    margin-right: 10px;
+    padding: 8px;
+    background-color: orange;
+    border: 1px solid orange;
+    outline: none;
+    border-radius: 4px;
+    color: white;
+    float: right;
+}
+
+.btn-update:hover {
+    background-color: rgb(253, 191, 75);
+    border: 1px solid rgb(253, 191, 75);
     color: whitesmoke;
     cursor: pointer;
 }
